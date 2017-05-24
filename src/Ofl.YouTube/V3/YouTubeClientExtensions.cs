@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Ofl.Core.Linq;
+using Ofl.Collections.Generic;
 using Ofl.YouTube.V3.PlaylistItemResource;
 
 namespace Ofl.YouTube.V3
@@ -15,7 +15,6 @@ namespace Ofl.YouTube.V3
             // Validate parameters.
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (request == null) throw new ArgumentNullException(nameof(request));
-
 
             // The response.
             PlaylistItemListResponse response = null;

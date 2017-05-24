@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
-using Ofl.Core;
-using Ofl.Core.Net.Http;
 using Ofl.Google;
+using Ofl.Net.Http;
+using Ofl.Threading.Tasks;
 using Ofl.YouTube.V3.PlaylistItemResource;
 using Ofl.YouTube.V3.VideoResource;
 
@@ -22,7 +22,7 @@ namespace Ofl.YouTube.V3
 
         #region Overrides
 
-        protected override Task<string> FormatUrlAsync(string url, CancellationToken cancellationToken)
+        protected override ValueTask<string> FormatUrlAsync(string url, CancellationToken cancellationToken)
         {
             // Validate parameters.
             if (string.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
@@ -31,7 +31,7 @@ namespace Ofl.YouTube.V3
             url = $"https://www.googleapis.com/youtube/v3/{ url }";
 
             // Return the url.
-            return Task.FromResult(url);
+            return ValueTaskExtensions.FromResult(url);
         }
 
         #endregion
@@ -48,7 +48,7 @@ namespace Ofl.YouTube.V3
             var url = "videos";
 
             // Append items in the request.
-            url = QueryHelpers.AddQueryString(url, "id", request.Ids.ToDelimitedString(","));
+            url = QueryHelpers.AddQueryString(url, "id", request.Ids.Join(","));
             url = QueryHelpers.AddQueryString(url, "part", request.Parts.GetPartsParameter());
             if (request.MaxResults != null) url = QueryHelpers.AddQueryString(url, "maxResults", request.MaxResults.Value.ToString(CultureInfo.InvariantCulture));
             if (!string.IsNullOrWhiteSpace(request.PageToken)) url = QueryHelpers.AddQueryString(url, "pageToken", request.PageToken);

@@ -1,9 +1,14 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofl.YouTube", "Ofl.YouTube\Ofl.YouTube.csproj", "{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube", "src\Ofl.YouTube\Ofl.YouTube.csproj", "{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EE5B393F-833F-4A54-9A5C-EFB886E0C367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube.Tests", "test\Ofl.YouTube.Tests\Ofl.YouTube.Tests.csproj", "{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +20,16 @@ Global
 		{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7} = {EE5B393F-833F-4A54-9A5C-EFB886E0C367}
+		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D} = {A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}
 	EndGlobalSection
 EndGlobal

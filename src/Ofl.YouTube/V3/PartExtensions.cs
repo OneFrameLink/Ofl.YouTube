@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ofl.Core;
 
 namespace Ofl.YouTube.V3
 {
@@ -13,7 +12,7 @@ namespace Ofl.YouTube.V3
             if (parts == null) throw new ArgumentNullException(nameof(parts));
 
             // Cycle through the parts, get the object name and then lower case it.
-            return parts.Select(p => Enum.GetName(typeof(T), p).ToCamelCase()).ToDelimitedString(",");
+            return parts.Select(p => Enum.GetName(typeof(T), p).ToCamelCase()).Join(",");
         }
     }
 }
