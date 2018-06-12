@@ -10,6 +10,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A41F4F0B-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube.Tests", "test\Ofl.YouTube.Tests\Ofl.YouTube.Tests.csproj", "{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-level items", "solution-level items", "{040CC4FD-C444-4DB3-9360-316BCFD7C250}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.gitmodules = .gitmodules
+		appveyor.yml = appveyor.yml
+		directory.build.props = directory.build.props
+		LICENSE = LICENSE
+		Ofl.YouTube.sln.DotSettings = Ofl.YouTube.sln.DotSettings
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +43,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7} = {EE5B393F-833F-4A54-9A5C-EFB886E0C367}
 		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D} = {A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAE6D7AF-AAA0-4970-8BC8-C7476D8B7BC9}
 	EndGlobalSection
 EndGlobal

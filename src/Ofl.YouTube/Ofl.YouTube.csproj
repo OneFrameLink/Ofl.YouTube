@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>Functionality for interacting with YouTube APIs.</Description>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Ofl.YouTube</AssemblyName>
     <PackageId>Ofl.YouTube</PackageId>
     <PackageProjectUrl>https://github.com/OneFrameLink/Ofl.YouTube</PackageProjectUrl>
