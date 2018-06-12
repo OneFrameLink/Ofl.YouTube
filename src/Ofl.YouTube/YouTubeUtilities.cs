@@ -22,11 +22,8 @@ namespace Ofl.YouTube
             // If the URL is null or empty, return null.
             if (string.IsNullOrWhiteSpace(url)) return null;
 
-            // The Uri.
-            Uri uri;
-
             // If we can't create a URI instance, return null.
-            if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out uri)) return null;
+            if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out Uri uri)) return null;
 
             // The return value.
             var parsedUrl = new ParsedUrl();
@@ -37,14 +34,11 @@ namespace Ofl.YouTube
                 // Get the query string, parse, return.
                 IDictionary<string, StringValues> map = QueryHelpers.ParseNullableQuery(uri.Query);
 
-                // The string values.
-                StringValues values;
-
                 // If there is no map, get out.
                 if (map == null) return parsedUrl;
 
                 // Get the video ID.
-                if (map.TryGetValue("v", out values) && values.Count == 1)
+                if (map.TryGetValue("v", out StringValues values) && values.Count == 1)
                     // Set the ID.
                     parsedUrl.VideoId = values.Single();
 
