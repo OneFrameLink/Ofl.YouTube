@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Globalization;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
-using Ofl.Google;
-using Ofl.Net.Http;
+using Ofl.Net.Http.ApiClient.Json;
 using Ofl.Threading.Tasks;
 using Ofl.YouTube.V3.PlaylistItemResource;
 using Ofl.YouTube.V3.VideoResource;
 
 namespace Ofl.YouTube.V3
 {
-    public class YouTubeClient : GoogleApiClient, IYouTubeClient
+    public class YouTubeClient : JsonApiClient, IYouTubeClient
     {
         #region Constructor
 
-        public YouTubeClient(IApiKeyProvider apiKeyProvider, IHttpClientFactory httpClientFactory) : base(apiKeyProvider, httpClientFactory)
+        public YouTubeClient(HttpClient httpClient) : base(httpClient)
         { }
 
         #endregion
