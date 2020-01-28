@@ -6,7 +6,7 @@ namespace Ofl.YouTube.V3
 {
     public static class VideoListRequestExtensions
     {
-        public static VideoListRequest SetParts(
+        public static VideoListRequest WithParts(
             this VideoListRequest request, 
             params Part[] parts
         )
@@ -16,10 +16,10 @@ namespace Ofl.YouTube.V3
             if (parts == null) throw new ArgumentNullException(nameof(parts));
 
             // Call the overload.
-            return request.SetParts((IEnumerable<Part>)parts);
+            return request.WithParts((IEnumerable<Part>)parts);
         }
 
-        public static VideoListRequest SetParts(
+        public static VideoListRequest WithParts(
             this VideoListRequest request, 
             IEnumerable<Part> parts
         )
