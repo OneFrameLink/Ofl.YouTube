@@ -6,7 +6,10 @@ namespace Ofl.YouTube.V3
 {
     public static class VideoListRequestExtensions
     {
-        public static VideoListRequest SetParts(this VideoListRequest request, params Part[] parts)
+        public static VideoListRequest SetParts(
+            this VideoListRequest request, 
+            params Part[] parts
+        )
         {
             // Validate parameters.
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -16,7 +19,10 @@ namespace Ofl.YouTube.V3
             return request.SetParts((IEnumerable<Part>)parts);
         }
 
-        public static VideoListRequest SetParts(this VideoListRequest request, IEnumerable<Part> parts)
+        public static VideoListRequest SetParts(
+            this VideoListRequest request, 
+            IEnumerable<Part> parts
+        )
         {
             // Validate parameters.
             if (request == null) throw new ArgumentNullException(nameof(request));

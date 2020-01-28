@@ -6,7 +6,10 @@ namespace Ofl.YouTube.V3
 {
     public static class PlaylistListRequestExtensions
     {
-        public static PlaylistItemListRequest SetParts(this PlaylistItemListRequest request, params Part[] parts)
+        public static PlaylistItemListRequest SetParts(
+            this PlaylistItemListRequest request, 
+            params Part[] parts
+        )
         {
             // Validate parameters.
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -16,7 +19,10 @@ namespace Ofl.YouTube.V3
             return request.SetParts((IEnumerable<Part>) parts);
         }
 
-        public static PlaylistItemListRequest SetParts(this PlaylistItemListRequest request, IEnumerable<Part> parts)
+        public static PlaylistItemListRequest SetParts(
+            this PlaylistItemListRequest request, 
+            IEnumerable<Part> parts
+        )
         {
             // Validate parameters.
             if (request == null) throw new ArgumentNullException(nameof(request));
