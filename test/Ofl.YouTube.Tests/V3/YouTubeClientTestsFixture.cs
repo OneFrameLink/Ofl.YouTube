@@ -22,7 +22,7 @@ namespace Ofl.YouTube.Tests.V3
 
         private static readonly IConfigurationRoot ConfigurationRoot = new ConfigurationBuilder()
             // For local debugging.
-            .AddJsonFile("appsettings.local.json")
+            .AddJsonFile("appsettings.local.json", true)
             // For Appveyor.
             .AddEnvironmentVariables()
             .Build();
