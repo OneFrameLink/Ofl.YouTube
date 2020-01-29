@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
@@ -21,6 +22,11 @@ namespace Ofl.YouTube.V3
         #endregion
 
         #region Overrides
+
+        protected override JsonSerializerOptions CreateJsonSerializerOptions() =>
+            new JsonSerializerOptions {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            };
 
         protected override ValueTask<string> FormatUrlAsync(string url, CancellationToken cancellationToken)
         {

@@ -47,7 +47,7 @@ namespace Ofl.YouTube.Tests.V3
         #region Tests
 
         [Theory]
-        [InlineData("T1rBQCufWfI")]
+        [InlineData("fFoLbsA5Sx0")]
         public async Task Test_GetVideo_Async(string videoId)
         {
             // Validate parameters.
@@ -57,9 +57,12 @@ namespace Ofl.YouTube.Tests.V3
             var youTubeClient = CreateYouTubeClient();
 
             // Create the request.
-            var request = new VideoListRequest {
-                Ids = {videoId}
-            }.WithParts(Part.Id);
+            var request = new VideoListRequest(
+                new string[1] { videoId },
+                new Part[1] { Part.Id },
+                null,
+                null
+            );
 
             // Make the call.
             await youTubeClient.GetVideosAsync(request, CancellationToken.None).ConfigureAwait(false);

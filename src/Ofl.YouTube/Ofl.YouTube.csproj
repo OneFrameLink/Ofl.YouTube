@@ -19,7 +19,7 @@
     <PackageReference Include="Ofl.Net.Http.ApiClient.Json" Version="3.0.9" />
     <PackageReference Include="Ofl.Primitives" Version="3.1.9" />
     <PackageReference Include="Ofl.Threading.Tasks" Version="3.0.6" />
-    <PackageReference Include="Ofl.YouTube.Abstractions" Version="3.0.7" />
+    <PackageReference Include="Ofl.YouTube.Abstractions" Version="3.0.8" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
   </ItemGroup>
 
