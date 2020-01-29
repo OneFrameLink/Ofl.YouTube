@@ -1,46 +1,34 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Ofl.Google;
 using Ofl.YouTube.V3;
+using Ofl.YouTube.V3.PlaylistItemResource;
 using Ofl.YouTube.V3.VideoResource;
 using Xunit;
 
 namespace Ofl.YouTube.Tests.V3
 {
-    public class YouTubeClientTests
+    public class YouTubeClientTests : IClassFixture<YouTubeClientTestsFixture>
     {
+        #region Constructor
+
+        public YouTubeClientTests(YouTubeClientTestsFixture fixture)
+        {
+            // Validate parameters.
+            _fixture = fixture ?? throw new ArgumentNullException(nameof(fixture));
+        }
+
+        #endregion
+
+        #region Instance, read-only state.
+
+        private readonly YouTubeClientTestsFixture _fixture;
+
+        #endregion
+
         #region Helpers
 
-        private static IConfigurationRoot CreateConfigurationRoot() => new ConfigurationBuilder()
-            // For local debugging.
-            .AddJsonFile("appsettings.local.json")
-            // For Appveyor.
-            .AddEnvironmentVariables()
-            .Build();
-
-        private static IYouTubeClient CreateYouTubeClient()
-        {
-            // Get the configuration root.
-            IConfigurationRoot configurationRoot = CreateConfigurationRoot();
-
-            // Create a container.
-            var sc = new ServiceCollection();
-
-            // Add the google apis.
-            sc.AddGoogleApi(configurationRoot.GetSection("google"));
-
-            // Add the youtube client.
-            sc.AddYouTubeClient();
-
-            // Get the provider.
-            IServiceProvider sp = sc.BuildServiceProvider();
-
-            // Get the client.
-            return sp.GetRequiredService<IYouTubeClient>();
-        }
+        private IYouTubeClient CreateYouTubeClient() => _fixture.CreateYouTubeClient();
 
         #endregion
 
@@ -48,7 +36,7 @@ namespace Ofl.YouTube.Tests.V3
 
         [Theory]
         [InlineData("fFoLbsA5Sx0")]
-        public async Task Test_GetVideo_Async(string videoId)
+        public async Task Test_GetVideos_Async(string videoId)
         {
             // Validate parameters.
             if (string.IsNullOrWhiteSpace(videoId)) throw new ArgumentNullException(nameof(videoId));
@@ -58,14 +46,42 @@ namespace Ofl.YouTube.Tests.V3
 
             // Create the request.
             var request = new VideoListRequest(
-                new string[1] { videoId },
-                new Part[1] { Part.Id },
+                new[] { videoId },
+                new[] { YouTube.V3.VideoResource.Part.Id },
                 null,
                 null
             );
 
             // Make the call.
             await youTubeClient.GetVideosAsync(request, CancellationToken.None).ConfigureAwait(false);
+        }
+
+        [Theory]
+        [InlineData("PLnJYUs2wpsOLCmkW_YVCgPzCcF2mtt2Km")]
+        public async Task Test_GetPlaylistItemsAsync_Async(string playlistId)
+        {
+            // Validate parameters.
+            if (string.IsNullOrWhiteSpace(playlistId)) throw new ArgumentNullException(nameof(playlistId));
+
+            // Create the youtube client.
+            var youTubeClient = CreateYouTubeClient();
+
+            // Create the request.
+            var request = new PlaylistItemListRequest(
+                playlistId,
+                new[] { YouTube.V3.PlaylistItemResource.Part.Id },
+                null,
+                null
+            );
+
+            // Make the call.
+            PlaylistItemListResponse response = await youTubeClient
+                .GetPlaylistItemsAsync(request, CancellationToken.None)
+                .ConfigureAwait(false);
+
+            // Validate
+            Assert.NotNull(response.Items);
+            Assert.NotEmpty(response.Items);
         }
 
         #endregion
