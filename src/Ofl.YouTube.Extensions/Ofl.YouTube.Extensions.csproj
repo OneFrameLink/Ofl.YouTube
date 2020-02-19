@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Extensions on top of absrtactions for interacting with YouTube APIs.</Description>
+    <AssemblyName>Ofl.YouTube.Extensions</AssemblyName>
+    <PackageId>Ofl.YouTube.Extensions</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+    <PackageReference Include="Ofl.Primitives" Version="3.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ofl.YouTube.Abstractions\Ofl.YouTube.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

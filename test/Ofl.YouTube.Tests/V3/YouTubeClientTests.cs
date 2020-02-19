@@ -45,12 +45,9 @@ namespace Ofl.YouTube.Tests.V3
             var youTubeClient = CreateYouTubeClient();
 
             // Create the request.
-            var request = new VideoListRequest(
-                new[] { videoId },
-                new[] { YouTube.V3.VideoResource.Part.Id },
-                null,
-                null
-            );
+            var request = new VideoListRequest()
+                .AddIds(videoId)
+                .AddParts(YouTube.V3.VideoResource.Part.Id);
 
             // Make the call.
             await youTubeClient.GetVideosAsync(request, CancellationToken.None).ConfigureAwait(false);

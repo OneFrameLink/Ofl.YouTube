@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Abstractions used by the Ofl.YouTube project.</Description>
+    <AssemblyName>Ofl.YouTube.Abstractions</AssemblyName>
+    <PackageId>Ofl.YouTube.Abstractions</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ofl.Text.Json" Version="1.0.1" />
+    <PackageReference Include="System.Text.Json" Version="4.7.0" />
+  </ItemGroup>
+</Project>

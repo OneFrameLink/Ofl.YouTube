@@ -2,28 +2,22 @@
 
   <PropertyGroup>
     <Description>Functionality for interacting with YouTube APIs.</Description>
-    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>Ofl.YouTube</AssemblyName>
     <PackageId>Ofl.YouTube</PackageId>
-    <PackageProjectUrl>https://github.com/OneFrameLink/Ofl.YouTube</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/OneFrameLink/Ofl.YouTube.git</RepositoryUrl>
-	  <Version>4.0.0</Version>
-	  <PackageTags>google google-data-api google-api</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.1.2" />
     <PackageReference Include="Ofl.Collections" Version="2.0.11" />
     <PackageReference Include="Ofl.Google" Version="4.0.15" />
-    <PackageReference Include="Ofl.Net.Http.ApiClient.Json" Version="3.0.9" />
+    <PackageReference Include="Ofl.Net.Http.ApiClient.Json" Version="3.0.11" />
     <PackageReference Include="Ofl.Primitives" Version="3.1.9" />
     <PackageReference Include="Ofl.Threading.Tasks" Version="3.0.6" />
-    <PackageReference Include="Ofl.YouTube.Abstractions" Version="3.0.8" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.0.0" />
+    <ProjectReference Include="..\Ofl.YouTube.Abstractions\Ofl.YouTube.Abstractions.csproj" />
   </ItemGroup>
 </Project>

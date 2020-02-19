@@ -1,12 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube", "src\Ofl.YouTube\Ofl.YouTube.csproj", "{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EE5B393F-833F-4A54-9A5C-EFB886E0C367}"
+	ProjectSection(SolutionItems) = preProject
+		src\directory.build.props = src\directory.build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}"
+	ProjectSection(SolutionItems) = preProject
+		test\directory.build.props = test\directory.build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube.Tests", "test\Ofl.YouTube.Tests\Ofl.YouTube.Tests.csproj", "{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}"
 EndProject
@@ -22,6 +28,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-level items", "sol
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube.Abstractions", "src\Ofl.YouTube.Abstractions\Ofl.YouTube.Abstractions.csproj", "{C72F08A0-2B9D-40A1-AD8A-C1195CA07820}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube.Abstractions.Tests", "test\Ofl.YouTube.Abstractions.Tests\Ofl.YouTube.Abstractions.Tests.csproj", "{E22E6427-B63C-4AF9-A374-251E6ED4DF73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.YouTube.Extensions", "src\Ofl.YouTube.Extensions\Ofl.YouTube.Extensions.csproj", "{105A597F-1682-4356-AC76-F74259C5E84C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofl.Youtube.Extensions.Tests", "test\Ofl.Youtube.Extensions.Tests\Ofl.Youtube.Extensions.Tests.csproj", "{2FD58EFD-9FDF-4954-8E10-B1267CA62B52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +50,22 @@ Global
 		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72F08A0-2B9D-40A1-AD8A-C1195CA07820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72F08A0-2B9D-40A1-AD8A-C1195CA07820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72F08A0-2B9D-40A1-AD8A-C1195CA07820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72F08A0-2B9D-40A1-AD8A-C1195CA07820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22E6427-B63C-4AF9-A374-251E6ED4DF73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22E6427-B63C-4AF9-A374-251E6ED4DF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22E6427-B63C-4AF9-A374-251E6ED4DF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22E6427-B63C-4AF9-A374-251E6ED4DF73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105A597F-1682-4356-AC76-F74259C5E84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105A597F-1682-4356-AC76-F74259C5E84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105A597F-1682-4356-AC76-F74259C5E84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105A597F-1682-4356-AC76-F74259C5E84C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD58EFD-9FDF-4954-8E10-B1267CA62B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD58EFD-9FDF-4954-8E10-B1267CA62B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD58EFD-9FDF-4954-8E10-B1267CA62B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD58EFD-9FDF-4954-8E10-B1267CA62B52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +73,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0C6900A6-EC13-4324-9274-A3F4F2C6F7A7} = {EE5B393F-833F-4A54-9A5C-EFB886E0C367}
 		{816E46D1-AEC6-41DE-8E11-94CDB9DA116D} = {A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}
+		{C72F08A0-2B9D-40A1-AD8A-C1195CA07820} = {EE5B393F-833F-4A54-9A5C-EFB886E0C367}
+		{E22E6427-B63C-4AF9-A374-251E6ED4DF73} = {A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}
+		{105A597F-1682-4356-AC76-F74259C5E84C} = {EE5B393F-833F-4A54-9A5C-EFB886E0C367}
+		{2FD58EFD-9FDF-4954-8E10-B1267CA62B52} = {A41F4F0B-A01D-41C5-9F2D-79A5A766D06A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAE6D7AF-AAA0-4970-8BC8-C7476D8B7BC9}
