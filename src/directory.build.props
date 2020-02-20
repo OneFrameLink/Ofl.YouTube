@@ -9,6 +9,6 @@
     <PackageProjectUrl>https://github.com/OneFrameLink/Ofl.YouTube</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OneFrameLink/Ofl.YouTube.git</RepositoryUrl>
     <RootNamespace>Ofl.YouTube</RootNamespace>
-    <PackageTags>google google-data-api google-api</PackageTags>
+    <PackageTags>youtube youtube-data-api youtube-api</PackageTags>
   </PropertyGroup>
 </Project>
