@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Description>Extensions on top of absrtactions for interacting with YouTube APIs.</Description>
     <AssemblyName>Ofl.YouTube.Extensions</AssemblyName>
     <PackageId>Ofl.YouTube.Extensions</PackageId>

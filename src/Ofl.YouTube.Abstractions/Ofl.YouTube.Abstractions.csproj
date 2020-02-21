@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Description>Abstractions used by the Ofl.YouTube project.</Description>
     <AssemblyName>Ofl.YouTube.Abstractions</AssemblyName>
     <PackageId>Ofl.YouTube.Abstractions</PackageId>
