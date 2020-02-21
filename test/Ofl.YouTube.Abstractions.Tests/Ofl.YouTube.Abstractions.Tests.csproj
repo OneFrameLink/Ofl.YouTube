@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <None Remove="V3\VideoResource\Resources\ContentDetails.json" />
-  </ItemGroup>
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+  </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="V3\VideoResource\Resources\ContentDetails.json" />
   </ItemGroup>
