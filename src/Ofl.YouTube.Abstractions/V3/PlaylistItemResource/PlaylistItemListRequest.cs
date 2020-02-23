@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Ofl.Linq;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ofl.YouTube.V3.PlaylistItemResource
 {
@@ -9,22 +11,22 @@ namespace Ofl.YouTube.V3.PlaylistItemResource
 
         public PlaylistItemListRequest(
             string playlistId,
-            IReadOnlyCollection<Part> parts,
-            int? maxResults,
-            string? pageToken
+            IEnumerable<Part>? parts = null,
+            int? maxResults = null,
+            string? pageToken = null
         )
         {
             // Validate parameters.
-            if (string.IsNullOrWhiteSpace(playlistId)) 
-                throw new ArgumentNullException(nameof(playlistId));
-            if (parts == null) throw new ArgumentNullException(nameof(parts));
+            PlaylistId = string.IsNullOrWhiteSpace(playlistId)
+                ? throw new ArgumentNullException(nameof(playlistId))
+                : playlistId;
             if (maxResults != null && maxResults <= 0)
                 throw new ArgumentOutOfRangeException(nameof(maxResults), maxResults.Value,
                     $"The {nameof(maxResults)} parameter must be a positive value.");
 
             // Assign values.
             PlaylistId = playlistId;
-            Parts = parts;
+            Parts = (parts ?? Enumerable.Empty<Part>()).ToReadOnlyCollection();
             MaxResults = maxResults;
             PageToken = pageToken;
         }

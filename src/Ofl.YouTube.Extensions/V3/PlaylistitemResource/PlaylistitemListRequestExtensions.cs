@@ -10,7 +10,7 @@ namespace Ofl.YouTube.V3.PlaylistItemResource
         public static PlaylistItemListRequest With(
             this PlaylistItemListRequest request,
             string? playlistId = null,
-            IReadOnlyCollection<Part>? parts = null,
+            IEnumerable<Part>? parts = null,
             int? maxResults = null,
             string? pageToken = null
         )

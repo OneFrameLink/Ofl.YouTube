@@ -18,7 +18,7 @@ environment:
 # from Ofl._shared.
 #--------------------------------------------------
   GOOGLE__APIKEY:
-    secure: m5yvnKtFRUWJS1CeQQVub2aanj5aB4BLn/Y+pyC2PmVbKzdgrPx7FZT3iKWaQP8u
+    secure: WEbkgGjWbtwHIf4dQ9Wyw+Gq+OgZyqLGp89YisTO5nvWoMykysA+CbMlDZCMO/oG
 
 #--------------------------------------------------
 # Branch whitelist

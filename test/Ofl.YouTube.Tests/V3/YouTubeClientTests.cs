@@ -65,11 +65,8 @@ namespace Ofl.YouTube.Tests.V3
 
             // Create the request.
             var request = new PlaylistItemListRequest(
-                playlistId,
-                new[] { YouTube.V3.PlaylistItemResource.Part.Id },
-                null,
-                null
-            );
+                playlistId
+            ).AddParts(YouTube.V3.PlaylistItemResource.Part.Id);
 
             // Make the call.
             PlaylistItemListResponse response = await youTubeClient
